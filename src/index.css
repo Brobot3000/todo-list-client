@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* kleuren */
+  --light-blue: #a8dadc;
+  --dark-blue: #1d3557;
+  --red: #e63946;
+
+  --button-border-radius: 6px;
+
+  /* lettergrootte */
+  --font-size-14: 14px;
+  --font-size-18: 18px;
+  --font-size-20: 20px;
+  --font-size-24: 24px;
+  --font-size-32: 32px;
+  --font-size-42: 42px;
+
+  /* paddings en margins */
+  --padding-1x2: 0.5em 1em;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  margin: 0 auto;
+  margin-bottom: 1.25rem;
+  width: 800px;
+}
+
+body,
+input,
+textarea,
+button {
+  font-family: Roboto, sans-serif;
+}
+
+/* Navigatie */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.25rem 0;
+}
+
+nav a {
+  align-items: center;
+  background-color: var(--light-blue);
+  border-radius: var(--button-border-radius);
+  color: white;
+  column-gap: 8px;
+  display: flex;
+  font-size: var(--font-size-20);
+  padding: var(--padding-1x2);
+  text-decoration: none;
+}
+
+nav .active {
+  background-color: var(--red);
+}
+
+/* paginatitel */
+.page-title {
+  font-size: var(--font-size-42);
+  padding: 1.25rem 0;
+}
+
+/* kaarten */
+.card {
+  border: 1px solid var(--light-blue);
+  border-radius: var(--button-border-radius);
+  margin: 1rem 0;
+  padding: 1.25rem 1rem;
+}
+
+.card:first-of-type {
+  margin-top: 0;
+}
+
+.card:last-of-type {
+  margin-bottom: 0;
+}
+
+/* kaarttitel */
+.card-title {
+  font-size: var(--font-size-24);
+}
+
+/* kaartbeschrijving */
+.card-description {
+  font-size: var(--font-size-18);
+  line-height: 1.4;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* meer weergeven knop */
+.show-more {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: var(--font-size-14);
+  text-decoration: underline;
+}
+
+/* status en deadline van de todo */
+.deadline,
+.deadline-passed {
+  font-size: var(--font-size-18);
+  font-variant: small-caps;
+}
+
+.deadline-passed {
+  color: var(--red);
+}
+
+/* check off form */
+.check-off {
+  margin-top: 1rem;
+}
+
+/* verberg de input */
+.check-off input[type="text"] {
+  display: none;
+}
+
+/* gedaan knop */
+.check-off button {
+  background-color: var(--light-blue);
+  border: none;
+  border-radius: var(--button-border-radius);
+  color: white;
+  cursor: pointer;
+  font-size: var(--font-size-18);
+  padding: var(--padding-1x2);
+}
+
+/* voeg todo toe formulier */
+.add-todo-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-todo-form label {
+  font-size: var(--font-size-24);
+  margin-bottom: 6px;
+}
+
+.add-todo-form input,
+.add-todo-form textarea {
+  font-size: var(--font-size-20);
+  padding: var(--padding-1x2);
+}
+
+#description {
+  resize: none;
+}
+
+#task,
+#description,
+#deadline {
+  margin-bottom: 32px;
+}
+
+.add-todo-form button {
+  background-color: var(--light-blue);
+  border: none;
+  border-radius: var(--button-border-radius);
+  color: white;
+  cursor: pointer;
+  font-size: var(--font-size-18);
+  padding: var(--padding-1x2);
+  align-self: flex-start;
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    width: auto;
+    margin-right: 1.25rem;
+    margin-left: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .page-title {
+    font-size: var(--font-size-32);
+  }
+
+  nav {
+    flex-direction: column;
+    row-gap: 12px;
+  }
+
+  nav a {
+    justify-content: center;
+  }
+
+  .card-title {
+    font-size: var(--font-size-20);
+  }
+}
